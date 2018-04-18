@@ -1,0 +1,218 @@
+#mainImage {
+    /* text-align: center; */
+    width: 80%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+}
+
+#imageSource {
+    width: 100%;
+    margin: auto;
+}
+
+#buildingSourceContainer{
+	position: absolute;
+    text-align: center;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: none;
+}
+
+#buildingSource {
+    width: 100%;
+    margin:auto;
+    z-index: 10;
+}
+
+#switchingSourceContainer{
+	position: absolute;
+    text-align: center;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: none;
+}
+
+#switchingSource {
+    width: 100%;
+    margin:auto;
+    z-index: 10;
+}
+/*
+#itemContainer{
+position: absolute;
+    text-align: center;
+    z-index: 1;
+    left: 10px;
+    bottom: 50px;
+}*/
+/*
+#itemSource {
+    width: 20%;
+    margin:auto;
+    z-index: 1;
+}*/
+
+#itemContainer{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: none;
+}
+
+#itemSource {
+    width: 100%;
+    margin:auto;
+    z-index: 1;
+}
+
+.gameButton {
+    margin-left: auto;
+    z-index: 2;
+    /* right: 0px; */
+    bottom: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    background: white;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    color: #555555;
+    /*width: 100px;*/
+    /*height: 50px;*/
+    font-size: 20px;
+
+}
+
+.buttonsDiv{
+	position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    /*initially dont show the buttons*/
+    display:none;
+}
+
+#nextSceneButtons{
+	display:none;
+}
+
+div#gameBody {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#itemContainer{
+	display:none;
+}
+div#nextSceneButtons {
+    z-index: 2;
+}
+
+div#metricsContainer {
+    display: none;
+    position: absolute;
+    /* z-index: 50; */
+    top: 10px;
+    left: 10px;
+    /* width: 100%; */
+    text-align: left;
+    /* display: none; */
+    font-size: 20px;
+    background: rgba(0,0,0,0.7);
+    /* padding: 20px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    /* padding: 10px; */
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 15px;
+    padding-top: 10px;
+    color: white;
+    z-index: 20;
+}
+
+p#budgetContainerText {
+    /* color: #F7CA18; */
+    /*font-size: 25px;
+    background: rgba(255,255,255,0.7);
+    padding: 10px;
+    border-radius: 50px;
+    font-family: Arial, Helvetica, sans-serif;*/
+}
+
+span#budgetNumber {
+    /*green*/
+    color: #2ECC71;
+}
+
+span#budgetIcon {
+    /*pink*/
+    color: #FDAB9F;
+}
+
+span#aestheticIcon {
+    /*color: #EF4836;*/
+    color: #DBFE87;
+}
+
+span#functionalityIcon {
+    color: #19B5FE;
+}
+
+div#playButtonContainer {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    text-align: center;
+}
+
+div#budgetSelectionContainer {
+    display: none;
+    position: absolute;
+    bottom: 160px;
+    width: 100%;
+    text-align: center;
+}
+
+div#budgetSelectionBox {
+    /* width: auto; */
+    /* width: 20%; */
+    /* text-align: center; */
+    background: white;
+    padding: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    border: 5px solid #EF863A;
+}
+
+p#budgetText {
+    font-size: 20px;
+}
+
+#metricsPopupContainer {
+    display:none;
+    position: absolute;
+    /* bottom: 160px; */
+    top: 10px;
+    width: 100%;
+    /* background: rgba(0,0,0,0.9); */
+    text-align: center;
+    z-index:20;
+}
+div#metricsPopupBox {
+    padding: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.7);
+    font-size: 20px;
+    color:white;
+}

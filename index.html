@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Forever Home</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- font awesome glyphicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="shortcut icon" href="./images/home.png">
+    <link rel="stylesheet" href="./css/gameStyle.css">
+    <script type="text/javascript" src="./js/queue.js"></script>
+    <script type="text/javascript" src="./js/tree.js"></script>
+    <script type="text/javascript" src="./js/construct-tree.js"></script>
+    <script type="text/javascript" src="./js/logic.js"></script>
+
+
+  </head>
+  <body>
+    <div id="gameBody">
+      <div id="mainImage">
+
+        <div id="metricsContainer" style="display: none;">
+          <p id="budgetContainerText"><span id="budgetIcon" class="glyphicon glyphicon-piggy-bank"></span><span id="budgetNumber"></span></p>
+          <p id="functionalityText"><span id="functionalityIcon" class="glyphicon glyphicon-cog"></span><span id="functionalityNumber"></span></p>
+          <p id="aestheticText"><span id="aestheticIcon" class="fa fa-paint-brush"></span><span id="aestheticNumber"></span></p>
+
+        </div>
+
+        <img id="imageSource" src="./images/House.png">
+        <div id="playButtonContainer">
+          <button class="gameButton" id="playButton" onclick="playGame();">Play Game</button>  
+        </div>
+        <div id="budgetSelectionContainer">
+          <div id="budgetSelectionBox">
+            <p id="budgetText">Enter a Budget Amount</p>
+            <label id="dollarSignBudgetLabel">$</label>
+            <input type="number" name="budget" id="budgetNumberField" min="0" max="1000000" step="1000" value="50000">
+            <button class="gameButton" id="budgetSelectionButton" onclick="applyBudget();">Apply Budget</button>
+          </div>
+        </div>
+
+        <div id="metricsPopupContainer">
+          <div id="metricsPopupBox">
+            <p id="metricsPopupTitle">Cost, Functionality, and Added Aesthetic of Selected Option</p>
+            <p id="metricsPopupCostText"><span id="budgetIcon" class="glyphicon glyphicon-piggy-bank"></span><span id="metricsPopupCostNumber"></span></p>
+            <p id="metricsPopupFunctionalityText"><span id="functionalityIcon" class="glyphicon glyphicon-cog"></span><span id="metricsPopupFunctionalityNumber"></span></p>
+            <p id="metricsPopupAestheticText"><span id="aestheticIcon" class="fa fa-paint-brush"></span><span id="metricsPopupAestheticNumber"></span></p>
+            
+          </div>
+        </div>
+        <div id="buildingSourceContainer">
+          <img id="buildingSource" src="./images/scene1/LivingRoom-CloudTransition.gif">  
+        </div>
+        <div id="switchingSourceContainer">
+          <img id="switchingSource" src="./images/scene2/KitchenTransition2-no-loop.gif">  
+        </div>
+        <div id="itemContainer">
+          <img id="itemSource" src="./images/scene1/steps.jpg">  
+        </div>
+        <div id="optionsButtons" class="buttonsDiv">
+          <!--button text gets set dynamically in ./js/logic.js-->
+          <button class="gameButton" id="button1" onmouseover="onMouseOverButtonListener(0)" onmouseout="onMouseOutButtonListener(0)" onclick="selectOption(0);"></button>
+          <button class="gameButton" id="button2" onmouseover="onMouseOverButtonListener(1)" onmouseout="onMouseOutButtonListener(1)" onclick="selectOption(1);"></button>
+          <button class="gameButton" id="button3" onmouseover="onMouseOverButtonListener(2)" onmouseout="onMouseOutButtonListener(2)" onclick="selectOption(2);"></button>
+          <button class="gameButton" id="button4" onmouseover="onMouseOverButtonListener(3)" onmouseout="onMouseOutButtonListener(3)" onclick="selectOption(3);"></button>
+        </div>
+        <div id="nextSceneButtons" class="buttonsDiv">
+          <button class="gameButton" id="nextSceneButton" onclick="nextScene();" >Next Scene</button>
+        </div>
+      </div>
+      <!--<audio loop="loop" autoplay="autoplay">
+        <source src="./sound/cocktail-party.mp3" type="audio/mpeg" />
+      </audio>-->
+      
+    </div>
+  </body>
+</html>
