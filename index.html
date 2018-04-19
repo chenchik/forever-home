@@ -19,10 +19,12 @@
     
     <link rel="shortcut icon" href="./images/home.png">
     <link rel="stylesheet" href="./css/gameStyle.css">
+    <link rel="stylesheet" href="./css/endingSceneStyle.css">
     <script type="text/javascript" src="./js/queue.js"></script>
     <script type="text/javascript" src="./js/tree.js"></script>
     <script type="text/javascript" src="./js/construct-tree.js"></script>
     <script type="text/javascript" src="./js/logic.js"></script>
+    <script type="text/javascript" src="./js/ending-scene-logic.js"></script>
 
 
   </head>
@@ -79,10 +81,49 @@
           <button class="gameButton" id="nextSceneButton" onclick="nextScene();" >Next Scene</button>
         </div>
       </div>
+
+      <!-- ending scene container-->
+      <div id="endingContainer">
+        <!--side panel-->
+        <div id="endingSidePanelContainer">
+          <button class="accordion">Level 1</button>
+          <div class="panel">
+            <ul id="endingScene1OptionsList">
+              <li id="scene1Option1" onclick="changeEndingScene(1,1);">option1</li>
+              <li id="scene1Option2" onclick="changeEndingScene(1,2);">option2</li>
+              <li id="scene1Option3" onclick="changeEndingScene(1,3);">option3</li>
+              <li id="scene1Option4" onclick="changeEndingScene(1,4);">option4</li>
+            </ul>
+          </div>
+
+          <button class="accordion">Level 2</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+
+          <button class="accordion">Level 3</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+
+        <div id="endingSceneAndEducationContainer">
+          <!--main image-->
+          <div id="endingSceneContainer">
+            <img id="endingImageSource" src="./images/House.png">
+          </div>
+          <!-- educational info-->
+          <div id="educationalInfoContainer">
+            <p>eductation</p>
+          </div>
+        </div>
+        
+      </div>
       <!--<audio loop="loop" autoplay="autoplay">
         <source src="./sound/cocktail-party.mp3" type="audio/mpeg" />
       </audio>-->
       
     </div>
   </body>
+  <script type="text/javascript" src="./js/accordion.js"></script>
 </html>
