@@ -1,17 +1,18 @@
 div#endingContainer {
     /* text-align: center; */
-    width: 80%;
     margin: auto;
+    width: 80%;
     display: inline-block;
     position: relative;
 }
-div#endingSidePanelContainer {
+div#accordion {
     width: 20%;
+    height: 100%;
     display: inline-block; 
-    border: red 1px solid;
+    float: left;
 }
 div#endingSceneAndEducationContainer {
-    width: 79%;
+    width: 80%;
     border: 1px solid green;
     display: inline-block; 
 }
@@ -20,6 +21,7 @@ img#endingImageSource {
     width: 100%;
     margin: auto;
 }
+
 
 .accordion {
     background-color: #eee;
@@ -38,9 +40,45 @@ img#endingImageSource {
     background-color: #ccc; 
 }
 
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
 .panel {
     padding: 0 18px;
     display: none;
     background-color: white;
     overflow: hidden;
+}
+
+.panel button{
+    background-color: white;
+    border: none;
+    color: black;
+    width: 90%;
+    padding: 15px 32px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.panel button:hover, .panel button:focus{
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:focus {
+    outline:0;
 }
