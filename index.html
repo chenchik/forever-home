@@ -85,25 +85,45 @@
       <!-- ending scene container-->
       <div id="endingContainer">
         <!--side panel-->
-        <div id="endingSidePanelContainer">
-          <button class="accordion">Level 1</button>
+        <div id="accordion">
+          <button class='accordion'>Level 1</button>
           <div class="panel">
-            <ul id="endingScene1OptionsList">
-              <li id="scene1Option1" onclick="changeEndingScene(1,1);">option1</li>
-              <li id="scene1Option2" onclick="changeEndingScene(1,2);">option2</li>
-              <li id="scene1Option3" onclick="changeEndingScene(1,3);">option3</li>
-              <li id="scene1Option4" onclick="changeEndingScene(1,4);">option4</li>
-            </ul>
+            <button id="scene1Option1" onload="assignOptionNames(1,1)" onclick="changeEndingScene(1,1);">option1</button>
+            <button id="scene1Option2" onclick="changeEndingScene(1,2);">option2</button>
+            <button id="scene1Option3" onclick="changeEndingScene(1,3);">option3</button>
+            <button id="scene1Option4" onclick="changeEndingScene(1,4);">option4</button>
           </div>
 
-          <button class="accordion">Level 2</button>
+          <button class='accordion'>Level 2</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <button id="scene2Option1" onclick="changeEndingScene(2,1);">option1</button>
+            <button id="scene2Option2" onclick="changeEndingScene(2,2);">option2</button>
+            <button id="scene2Option3" onclick="changeEndingScene(2,3);">option3</button>
+            <button id="scene2Option4" onclick="changeEndingScene(2,4);">option4</button>
           </div>
 
-          <button class="accordion">Level 3</button>
+          <button class='accordion'>Level 3</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <button id="scene3Option1" onclick="changeEndingScene(3,1);">option1</button>
+            <button id="scene3Option2" onclick="changeEndingScene(3,2);">option2</button>
+            <button id="scene3Option3" onclick="changeEndingScene(3,3);">option3</button>
+            <button id="scene3Option4" onclick="changeEndingScene(3,4);">option4</button>
+          </div>
+
+          <button class='accordion'>Level 4</button>
+          <div class="panel">
+            <button id="scene4Option1" onclick="changeEndingScene(4,1);">option1</button>
+            <button id="scene4Option2" onclick="changeEndingScene(4,2);">option2</button>
+            <button id="scene4Option3" onclick="changeEndingScene(4,3);">option3</button>
+            <button id="scene4Option4" onclick="changeEndingScene(4,4);">option4</button>
+          </div>
+
+          <button class='accordion'>Level 5</button>
+          <div class="panel">
+            <button id="scene1Option1" onclick="changeEndingScene(5,1);">option1</button>
+            <button id="scene1Option2" onclick="changeEndingScene(5,2);">option2</button>
+            <button id="scene1Option3" onclick="changeEndingScene(5,3);">option3</button>
+            <button id="scene1Option4" onclick="changeEndingScene(5,4);">option4</button>
           </div>
         </div>
 
@@ -114,7 +134,7 @@
           </div>
           <!-- educational info-->
           <div id="educationalInfoContainer">
-            <p>eductation</p>
+            <p id="education">education</p>
           </div>
         </div>
         
