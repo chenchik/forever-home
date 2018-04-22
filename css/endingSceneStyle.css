@@ -82,3 +82,41 @@ img#endingImageSource {
 button:focus {
     outline:0;
 }
+
+div#educationalInfoContainer {
+    text-align: left;
+    padding: 10px;
+}
+
+div#endingSceneMetricsContainer {
+    /* display: none; */
+    position: absolute;
+    z-index: 50;
+    top: 10px;
+    /* left: 10px; */
+    right: 10px;
+    /* width: 100%; */
+    text-align: left;
+    /* display: none; */
+    font-size: 15px;
+    background: rgba(0,0,0,0.7);
+    /* padding: 20px; */
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    padding: 5px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 15px;
+    /* padding-top: 10px; */
+    color: white;
+    z-index: 20;
+}
+span#endingSceneBudgetIcon {
+    color: #FDAB9F;
+}
+span#endingSceneFunctionalityIcon {
+    color: #19B5FE;
+}
+span#endingSceneAestheticIcon {
+    color: #DBFE87;
+}

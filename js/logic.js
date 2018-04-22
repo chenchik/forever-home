@@ -235,6 +235,15 @@ function nextScene(){
 	//only one child 
 	currentNode = currentNode.children[0];
 
+	//we've hit the end
+	if(currentNode == null){
+		var mainContainer = document.getElementById("mainImage");
+		var endingContainer = document.getElementById("endingContainer");
+		mainContainer.style.display = "none";
+		endingContainer.style.display = "inline-block";
+		return;
+	}
+
 	//pull up the transition animation for switching scenes
 	transition('switchingSourceContainer');
 

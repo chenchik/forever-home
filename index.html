@@ -83,7 +83,7 @@
       </div>
 
       <!-- ending scene container-->
-      <div id="endingContainer">
+      <div id="endingContainer" style="display:none">
         <!--side panel-->
         <div id="accordion">
           <button onclick="changeEndingScene(1,-1);" class='accordion'>Level 1</button>
@@ -129,9 +129,18 @@
 
         <div id="endingSceneAndEducationContainer">
           <!--main image-->
+          
           <div id="endingSceneContainer">
             <img id="endingImageSource" src="./images/House.png">
           </div>
+          
+          <!-- metrics -->
+          <div id="endingSceneMetricsContainer">
+            <p id="endingSceneBudgetContainerText"><span id="endingSceneBudgetIcon" class="glyphicon glyphicon-piggy-bank"></span><span id="endingSceneBudgetNumber">$450</span></p>
+            <p id="endingSceneFunctionalityText"><span id="endingSceneFunctionalityIcon" class="glyphicon glyphicon-cog"></span><span id="endingSceneFunctionalityNumber">3/5</span></p>
+            <p id="endingSceneAestheticText"><span id="endingSceneAestheticIcon" class="fa fa-paint-brush"></span><span id="EndingSceneAestheticNumber">4/5</span></p>
+          </div>
+
           <!-- educational info-->
           <div id="educationalInfoContainer">
             <p id="education">education</p>
