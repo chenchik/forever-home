@@ -86,6 +86,8 @@ button:focus {
 div#educationalInfoContainer {
     text-align: left;
     padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
 }
 
 div#endingSceneMetricsContainer {
@@ -119,4 +121,7 @@ span#endingSceneFunctionalityIcon {
 }
 span#endingSceneAestheticIcon {
     color: #DBFE87;
+}
+.bold {
+    font-weight: 700;
 }
