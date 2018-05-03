@@ -162,7 +162,7 @@ function selectOption(option){
 	refreshMetrics(option);
 
 	//save the selection
-	pastSelection = option;
+	pastSelection = option+1;
 
 }
 
@@ -241,6 +241,30 @@ function nextScene(){
 		var endingContainer = document.getElementById("endingContainer");
 		mainContainer.style.display = "none";
 		endingContainer.style.display = "inline-block";
+
+		//populate the button texts
+		var tmpNode = tree.root;
+
+		//populate button texts in a 10th of second
+		setTimeout(function(){
+		
+			for(i = 0; i < 5; i++){
+				tmpNode = tmpNode.children[0];
+				for(var option = 1; option < 5; option++){
+					var buttonText = document.getElementById('scene' + (i+1) + 'Option' + option);
+					buttonText.innerHTML = tmpNode.metadata.buttonTexts[option-1].buttonText;
+					console.debug(tmpNode);
+
+					//set the background color to green if it wad the choice they selected
+					if(savedOptions[i+1] == option){
+						buttonText.style.backgroundColor = "#87d37c";
+						buttonText.style.color = "white";
+					}
+				}
+			}
+
+		}, 100);
+		
 		return;
 	}
 
