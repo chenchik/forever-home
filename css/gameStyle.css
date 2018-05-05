@@ -73,21 +73,106 @@ position: absolute;
     z-index: 1;
 }
 
-.gameButton {
+#playButton {
     margin-left: auto;
+    font-family: 'Catamaran', sans-serif;
     z-index: 2;
-    /* right: 0px; */
-    bottom: 20px;
     margin-left: 1%;
     margin-right: 1%;
-    background: white;
-    border: 1px solid #aaaaaa;
-    border-radius: 5px;
+    border: none;
+    background: transparent;
     color: #555555;
-    /*width: 100px;*/
-    /*height: 50px;*/
-    font-size: 20px;
+    font-size: 75px;
+}
 
+#playButton:hover{
+    color: #7312d1;
+}
+
+.gameButton{
+    border-radius: 5px;
+    background: white;
+/*    border: 2px solid #EF863A;*/
+    display: inline-block;
+    margin: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+    top: 5px;
+    font-size: 16px;
+    padding: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.gameButton:hover{
+/*    background-color: #EF863A;*/
+    color: #EF863A;
+    border: 2px solid #EF863A;
+    transform: scale(1.1);
+
+}
+
+@-webkit-keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@-webkit-keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+.hvr-bob {
+  /*display: inline-block;*/
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+  -webkit-animation-name: hvr-bob-float, hvr-bob;
+  animation-name: hvr-bob-float, hvr-bob;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
 }
 
 .buttonsDiv{
@@ -119,22 +204,25 @@ div#metricsContainer {
     display: none;
     position: absolute;
     /* z-index: 50; */
-    top: 10px;
     left: 10px;
     /* width: 100%; */
     text-align: left;
     /* display: none; */
     font-size: 20px;
-    background: rgba(0,0,0,0.7);
+/*    background: rgba(0,0,0,0.7);*/
     /* padding: 20px; */
     padding-left: 10px;
     padding-right: 10px;
     /* padding: 10px; */
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 0px;
+    border: 3px solid #EF863A;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 15px;
     padding-top: 10px;
-    color: white;
+    background-color: white;
+    color: black;
     z-index: 20;
 }
 
@@ -159,7 +247,7 @@ span#budgetIcon {
 
 span#aestheticIcon {
     /*color: #EF4836;*/
-    color: #DBFE87;
+    color: #59db29;
 }
 
 span#functionalityIcon {
@@ -168,8 +256,9 @@ span#functionalityIcon {
 
 div#playButtonContainer {
     position: absolute;
-    top: 160px;
+    top: 10px;
     width: 100%;
+    border: none;
     text-align: center;
 }
 
@@ -195,6 +284,7 @@ div#budgetSelectionBox {
 
 p#budgetText {
     font-size: 20px;
+    font-family: 'Catamaran', sans-serif;
 }
 
 #metricsPopupContainer {
@@ -212,7 +302,10 @@ div#metricsPopupBox {
     margin-left: 30%;
     margin-right: 30%;
     border-radius: 10px;
-    background: rgba(0,0,0,0.7);
+    border: 5px solid #EF863A;
+    background: rgb(255,255,255);
+    /*background: rgba(0,0,0,0.7);*/
     font-size: 20px;
-    color:white;
+    color: black;
+    /*color:white;*/
 }
