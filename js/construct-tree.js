@@ -1,7 +1,7 @@
 //creating root, first scene
 var tree = new Tree("intro", {
 	id: 0,
-	scene: "../images/scene1/LivingRoom-OpeningScene.gif",
+	scene: "../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 	buttonTexts: [{
 			buttonText: "Play",
 			optionImageSource: "../images/scene1/LivingRoom-Option1(Levelled).png",
@@ -15,7 +15,7 @@ var tree = new Tree("intro", {
 
 tree.add("scene1", {
 	id: 1,
-	scene: "../images/scene1/LivingRoom-OpeningScene.gif",
+	scene: "../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 	cloudTransition: "../images/scene1/LivingRoom-CloudTransition.gif",
 	sceneTransition: "../images/scene1/LivingRoom-CloudTransition.gif",
 	introSceneTime: 20000,
@@ -100,13 +100,13 @@ tree.add('scene2', {
 
 tree.add('scene3', {
 	id: 3,
-	scene: "../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
-	cloudTransition: "../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+	scene: "../images/scene3/KitchenScene2---OpeningScenePart1-no-loop.gif",
+	cloudTransition: "../images/scene3/KitchenScene2-Cloud-Transition-no-loop.gif",
+	sceneTransition: "../images/scene3/KitchenScene2---OpeningScenePart2-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "New table",
-			optionImageSource: "../images/scene2/Kitchen1-Option1_light_lowered.png",
+			optionImageSource: "../images/scene3/KitchenScene2 -  Option1(Change Table).png",
 			cost: 500,
 			functionality: 5,
 			aesthetic: 4,
@@ -114,7 +114,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Grabber Tool",
-			optionImageSource: "../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option2(Grabber).png",
 			cost: 30,
 			functionality: 2,
 			aesthetic: 5,
@@ -122,7 +122,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Install Grab Bar",
-			optionImageSource: "../images/scene2/Kitchen1-Option3_Alexa.png",
+			optionImageSource: "../images/scene3/KitchenScene2---Option3(Bar)-no-loop.gif",
 			cost: 120,
 			functionality: 3,
 			aesthetic: 3,
@@ -130,7 +130,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Give Away Sandwich",
-			optionImageSource: "../images/scene2/Kitchen1-NoCost_string.png",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option4(No Cost).png",
 			cost: 0,
 			functionality: 0,
 			aesthetic: 5,
@@ -142,13 +142,13 @@ tree.add('scene3', {
 
 tree.add('scene4', {
 	id: 4,
-	scene: "../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
-	cloudTransition: "../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+	scene: "../images/scene4/Stairs-OpeningScene-no-loop.gif",
+	cloudTransition: "../images/scene4/Stairs-CloudTransition-no-loop.gif",
+	sceneTransition: "../images/scene4/Stairs-CircleTransition-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "Install Elevator",
-			optionImageSource: "../images/scene2/Kitchen1-Option1_light_lowered.png",
+			optionImageSource: "../images/scene4/Stairs-Elevator.png",
 			cost: 2500,
 			functionality: 5,
 			aesthetic: 4,
@@ -156,7 +156,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Purchase Space Heaters",
-			optionImageSource: "../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
+			optionImageSource: "../images/scene4/Stairs-Heaters.png",
 			cost: 200,
 			functionality: 3,
 			aesthetic: 3,
@@ -164,7 +164,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Install Smart Thermostat",
-			optionImageSource: "../images/scene2/Kitchen1-Option3_Alexa.png",
+			optionImageSource: "../images/scene4/Stairs-Nest.png",
 			cost: 250,
 			functionality: 4,
 			aesthetic: 5,
@@ -172,7 +172,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Pull Out Blanket",
-			optionImageSource: "../images/scene2/Kitchen1-NoCost_string.png",
+			optionImageSource: "../images/scene4/Stairs-Blanket.png",
 			cost: 0,
 			functionality: 1,
 			aesthetic: 5,
@@ -184,13 +184,13 @@ tree.add('scene4', {
 
 tree.add('scene5', {
 	id: 5,
-	scene: "../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
-	cloudTransition: "../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+	scene: "../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
+	cloudTransition: "../images/scene5/FrontDoor-CloudTransition-no-loop.gif",
+	sceneTransition: "../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "Install Sliding Door",
-			optionImageSource: "../images/scene2/Kitchen1-Option1_light_lowered.png",
+			optionImageSource: "../images/scene5/FrontDoor-SlideDoor.png",
 			cost: 1500,
 			functionality: 3,
 			aesthetic: 5,
@@ -198,7 +198,7 @@ tree.add('scene5', {
 		},
 		{
 			buttonText: "Install Door Opener",
-			optionImageSource: "../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
+			optionImageSource: "../images/scene5/FrontDoor-DoorOperator.png",
 			cost: 300,
 			functionality: 5,
 			aesthetic: 4,
@@ -206,7 +206,7 @@ tree.add('scene5', {
 		},
 		{
 			buttonText: "Buy Hook Door Opener",
-			optionImageSource: "../images/scene2/Kitchen1-Option3_Alexa.png",
+			optionImageSource: "../images/scene5/FrontDoor-Hook.png",
 			cost: 25,
 			functionality: 4,
 			aesthetic: 2,
@@ -214,7 +214,7 @@ tree.add('scene5', {
 		},
 		{
 			buttonText: "Call Hannah",
-			optionImageSource: "../images/scene2/Kitchen1-NoCost_string.png",
+			optionImageSource: "../images/scene5/FrontDoor-Hannah.png",
 			cost: 0,
 			functionality: 0,
 			aesthetic: 5,
