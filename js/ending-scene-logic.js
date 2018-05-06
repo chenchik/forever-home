@@ -15,7 +15,10 @@
 	}
 
 })();*/
-document.getElementById('tab-active').click();
+
+$( document ).ready(function() {
+    document.getElementById('tab-active').click();
+});
 
 function assignOptionNames(scene, option){
 	var offset = option - 1;
