@@ -58,6 +58,72 @@ console.log(currentNode.metadata.buttonTexts[0].optionImageSource);
 
 */
 
+//function to preload all the gifs, so that they don't slowly enter the game
+var imageCount = 0;
+function preloadImages(array) {
+    if (!preloadImages.list) {
+        preloadImages.list = [];
+    }
+    var list = preloadImages.list;
+    for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            var index = list.indexOf(this);
+            if (index !== -1) {
+                // remove image from the array once it's loaded
+                // for memory consumption reasons
+                list.splice(index, 1);
+                imageCount++;
+            }
+        }
+        list.push(img);
+        img.src = array[i];
+    }
+}
+
+var allImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
+				"../images/intro/OpeningScenePart1-no-loop-try-1.gif",
+				"../images/intro/OpeningScenePart2-no-loop-try-1.gif",
+				"../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif",
+				"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
+				"../images/scene1/LivingRoom-Option1(Levelled).png",
+				"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
+				"../images/scene1/LivingRoom-CloudTransition.gif",
+				"../images/scene1/KitchenTransition-no-loop.gif",
+				"../images/scene1/LivingRoom-Option1(Levelled).png",
+				"../images/scene1/LivingRoom-Option3(Lift).png",
+				"../images/scene1/LivingRoom-Option2(Ramp).png",
+				"../images/scene1/LivingRoom-Option4(NoCost)-no-loop.gif",
+				"../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
+				"../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
+				"../images/scene2/Kitchen1-TransitiontoKitchen2-new-no-loop.gif",
+				"../images/scene2/Kitchen1-Option1_light_lowered.png",
+				"../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
+				"../images/scene2/Kitchen1-Option3_Alexa.png",
+				"../images/scene2/Kitchen1-NoCost_string.png",
+				"../images/scene3/KitchenScene2 - OpeningScene-merged-no-loop.gif",
+				"../images/scene3/KitchenScene2-Cloud Transition.gif",
+				"../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+				"../images/scene3/KitchenScene2 -  Option1(Change Table).png",
+				"../images/scene3/KitchenScene2 - Option2(Grabber).png",
+				"../images/scene3/KitchenScene2 - Option3(Bar)-no-loop.gif",
+				"../images/scene3/KitchenScene2 - Option4(No Cost).png",
+				"../images/scene4/Stairs-OpeningScene-no-loop.gif",
+				"../images/scene4/Stairs-CloudTransition.gif",
+				"../images/scene4/Stairs-CircleTransition-no-loop.gif",
+				"../images/scene4/Stairs-Elevator.png",
+				"../images/scene4/Stairs-Heaters.png",
+				"../images/scene4/Stairs-Nest.png",
+				"../images/scene4/Stairs-Blanket.png",
+				"../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
+				"../images/scene5/FrontDoor-CloudTransition.gif",
+				"../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
+				"../images/scene5/FrontDoor-SlideDoor.png",
+				"../images/scene5/FrontDoor-DoorOperator.png",
+				"../images/scene5/FrontDoor-Hook.png",
+				"../images/scene5/FrontDoor-Hannah.png"];
+preloadImages(allImages);
+
 function playGame(){
 	//play the music at the 8 second start point
 	audio.currentTime = 8;
@@ -98,7 +164,7 @@ function applyBudget(){
 	var mainImage = document.getElementById("imageSource");
 	mainImage.src = "../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif";
 	setTimeout(function(){
-		transition('buildingSourceContainer');
+		transition('buildingSourceContainer','buildingSource');
 		mainImage.src = "../images/scene1/LivingRoom-OpeningScene-no-loop.gif";
 		initialize();
 	}, 10000); 
@@ -124,7 +190,7 @@ function initialize(){
 		//on mouseout, we hide the option again
 		//addButtonListeners(); 
 		//create a time attribute for each node
-	}, 20000);
+	}, 28000);
 }
 
 //need to clear cache whenever we make a new run of the game
@@ -149,7 +215,7 @@ function selectOption(option){
 	displayMetricsPopup(option);
 
 	//deploy the transition animation
-	transition('buildingSourceContainer');
+	transition('buildingSourceContainer','buildingSource');
 
 	//place the new item on the image
 	placeItem(option);
@@ -166,17 +232,19 @@ function selectOption(option){
 
 }
 
-function transition(transition){
+function transition(transition, imageId){
 	
 	var container = document.getElementById(transition);
-	container.style.display = "inline";
+	var containerImage = document.getElementById(imageId);
 
 	//decides whether to do a cloud transition or a transition made for switching scenes
 	if(transition == 'buildingSourceContainer'){
-		container.src = currentNode.metadata.cloudTransition;	
+		containerImage.src = currentNode.metadata.cloudTransition;	
 	}else if (transition == 'switchingSourceContainer'){
-		container.src = currentNode.metadata.sceneTransition;
+		containerImage.src = currentNode.metadata.sceneTransition;
 	}
+
+	container.style.display = "inline";
 	
 	setTimeout(function(){
 		container.style.display = "none";
@@ -235,6 +303,11 @@ function nextScene(){
 	//only one child 
 	currentNode = currentNode.children[0];
 
+	//save what option we selected for this level, then increment the level
+	savedOptions[currentLevel] = pastSelection;
+	currentLevel++;
+	console.log(savedOptions);
+
 	//we've hit the end
 	if(currentNode == null){
 		var mainContainer = document.getElementById("mainImage");
@@ -269,7 +342,7 @@ function nextScene(){
 	}
 
 	//pull up the transition animation for switching scenes
-	transition('switchingSourceContainer');
+	transition('switchingSourceContainer','switchingSource');
 
 	//change the scene image
 	var sceneImage = document.getElementById('imageSource');
@@ -285,10 +358,7 @@ function nextScene(){
 	var itemContainer = document.getElementById("itemContainer");
 	itemContainer.style.display = "none";
 
-	//save what option we selected for this level, then increment the level
-	savedOptions[currentLevel] = pastSelection;
-	currentLevel++;
-	console.log(savedOptions);
+
 
 	buttonClicked = false;
 
@@ -400,5 +470,48 @@ function onMouseOutButtonListener(option){
 		itemContainer.style.zIndex = "1";
 		removeItem();
 	}
+}
+
+//execute loading bar functionality when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    //alert("Ready!");
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (imageCount >= allImages.length) {
+            clearInterval(id);
+            showPlayButton();
+        } else {
+            //width++; 
+            //elem.style.width = width + '%';
+            var toPercent = (imageCount/allImages.length)*100;
+            elem.style.width = toPercent + '%'; 
+        }
+    }
+
+    //loading animation
+    var numDots = 0;
+   	/*
+    while(true){
+    	setTimeout(function(){
+			var loadingText = document.getElementById("loadingText");
+			loadingText.innerHTML = "loading";
+			for(var i = 0; i < numDots; i++){
+				loadingText += " ."; 
+			}
+		}, 500);
+		if(imageCount >= allImages.length){
+			break;
+		}
+    }*/
+}, false);
+
+function showPlayButton(){
+	var playButtonContainer = document.getElementById("playButtonContainer");
+	var loadingContainer = document.getElementById("loadingContainer");
+
+	playButtonContainer.style.display = "block";
+	loadingContainer.style.display = "none";
 }
 

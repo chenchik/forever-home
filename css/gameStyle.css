@@ -260,6 +260,7 @@ div#playButtonContainer {
     width: 100%;
     border: none;
     text-align: center;
+    display: none;
 }
 
 div#budgetSelectionContainer {
@@ -309,3 +310,32 @@ div#metricsPopupBox {
     color: black;
     /*color:white;*/
 }
+
+div#loadingContainer {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+#myProgress {
+    text-align: center;
+    width: 50%;
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 4px;
+    margin: auto;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: white;
+}
+
+p#loadingText {
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+

@@ -1,7 +1,7 @@
 //creating root, first scene
 var tree = new Tree("intro", {
 	id: 0,
-	scene: "../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
+	scene: "../images/scene1/LivingRoom-OpeningScene.gif",
 	buttonTexts: [{
 			buttonText: "Play",
 			optionImageSource: "../images/scene1/LivingRoom-Option1(Levelled).png",
@@ -17,8 +17,8 @@ tree.add("scene1", {
 	id: 1,
 	scene: "../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 	cloudTransition: "../images/scene1/LivingRoom-CloudTransition.gif",
-	sceneTransition: "../images/scene1/LivingRoom-CloudTransition.gif",
-	introSceneTime: 20000,
+	sceneTransition: "../images/scene1/KitchenTransition-no-loop.gif",
+	introSceneTime: 25000,
 	buttonTexts: [{
 			buttonText: "Level Floor",
 			optionImageSource: "../images/scene1/LivingRoom-Option1(Levelled).png",
@@ -60,7 +60,7 @@ tree.add('scene2', {
 	id: 2,
 	scene: "../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
 	cloudTransition: "../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-new-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "Move Light Switch",
@@ -100,10 +100,10 @@ tree.add('scene2', {
 
 tree.add('scene3', {
 	id: 3,
-	scene: "../images/scene3/KitchenScene2---OpeningScenePart1-no-loop.gif",
-	cloudTransition: "../images/scene3/KitchenScene2-Cloud-Transition-no-loop.gif",
-	sceneTransition: "../images/scene3/KitchenScene2---OpeningScenePart2-no-loop.gif",
-	introSceneTime: 35000,
+	scene: "../images/scene3/KitchenScene2 - OpeningScene-merged-no-loop.gif",
+	cloudTransition: "../images/scene3/KitchenScene2-Cloud Transition.gif",
+	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+	introSceneTime: 50000,
 	buttonTexts: [{
 			buttonText: "New table",
 			optionImageSource: "../images/scene3/KitchenScene2 -  Option1(Change Table).png",
@@ -122,7 +122,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Install Grab Bar",
-			optionImageSource: "../images/scene3/KitchenScene2---Option3(Bar)-no-loop.gif",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option3(Bar)-no-loop.gif",
 			cost: 120,
 			functionality: 3,
 			aesthetic: 3,
@@ -143,13 +143,13 @@ tree.add('scene3', {
 tree.add('scene4', {
 	id: 4,
 	scene: "../images/scene4/Stairs-OpeningScene-no-loop.gif",
-	cloudTransition: "../images/scene4/Stairs-CloudTransition-no-loop.gif",
+	cloudTransition: "../images/scene4/Stairs-CloudTransition.gif",
 	sceneTransition: "../images/scene4/Stairs-CircleTransition-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "Install Elevator",
 			optionImageSource: "../images/scene4/Stairs-Elevator.png",
-			cost: 2500,
+			cost: 25000,
 			functionality: 5,
 			aesthetic: 4,
 			education: "If you have the budget, by all means go for the elevator!  An elevator gives Uncle Jack free reign of all the floors in the house and unparalleled freedom. The price tag is steep, however, and maybe we can get Uncle Jack 80% of that freedom at a fraction of the cost."
@@ -185,9 +185,9 @@ tree.add('scene4', {
 tree.add('scene5', {
 	id: 5,
 	scene: "../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
-	cloudTransition: "../images/scene5/FrontDoor-CloudTransition-no-loop.gif",
+	cloudTransition: "../images/scene5/FrontDoor-CloudTransition.gif",
 	sceneTransition: "../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
-	introSceneTime: 35000,
+	introSceneTime: 28000,
 	buttonTexts: [{
 			buttonText: "Install Sliding Door",
 			optionImageSource: "../images/scene5/FrontDoor-SlideDoor.png",
