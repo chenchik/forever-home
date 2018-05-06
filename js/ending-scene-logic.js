@@ -16,9 +16,10 @@
 
 })();*/
 
-// $( document ).ready(function() {
-//     document.getElementById('tab-active').click();
-// });
+$( document ).ready(function() {
+	document.getElementById('tab-active').classList.toggle("active");
+    	document.getElementById('tab-active').nextElementSibling.classList.toggle("show");
+});
 
 function assignOptionNames(scene, option){
 	var offset = option - 1;
