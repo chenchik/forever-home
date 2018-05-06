@@ -317,10 +317,6 @@ function nextScene(){
 
 		//populate the button texts
 		var tmpNode = tree.root;
-		
-		var level1Tab = document.getElementById('tab-active');
-		level1Tab.classList.toggle("active");
-           	level1Tab.nextElementSibling.classList.toggle("show");
 
 		//populate button texts in a 10th of second
 		setTimeout(function(){
