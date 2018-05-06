@@ -317,6 +317,8 @@ function nextScene(){
 
 		//populate the button texts
 		var tmpNode = tree.root;
+		
+		 document.getElementById('tab-active').click();
 
 		//populate button texts in a 10th of second
 		setTimeout(function(){
