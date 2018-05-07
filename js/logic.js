@@ -65,10 +65,11 @@ function preloadImages(array) {
     }
 }
 
-var introImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
+var introImages = [ 
 					"../images/intro/OpeningScene1And2-merged-no-loop.gif",
 					"../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif",
 					"../images/intro/Part3AfterBudgetPick-no-loop.gif",
+					"../images/scene1/LivingRoom-OpeningScene.gif",
 					"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 					"../images/scene1/LivingRoom-Option1(Levelled).png",
 					"../images/scene1/LivingRoom-CloudTransition.gif",
@@ -311,6 +312,10 @@ function nextScene(){
 		mainContainer.style.display = "none";
 		endingContainer.style.display = "inline-block";
 
+		//make the first tab appear open
+		document.getElementById('tab-active').classList.toggle("active");
+    	document.getElementById('tab-active').nextElementSibling.classList.toggle("show");
+
 		//populate the button texts
 		var tmpNode = tree.root;
 
@@ -454,12 +459,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var id = setInterval(frame, 100);
     var numDots = 1;
     function frame() {
-        if (imageCount >= introImages.length) {
-        	//stall for a bit just in case, seems to help
-        	setTimeout(function(){
-        		clearInterval(id);
-            	showPlayButton();	
-        	}, 2000);       
+        if (imageCount >= introImages.length) {     
+        	clearInterval(id);
+            showPlayButton();
         } else {
         	//logic to handle loading bar animation
             var toPercent = (imageCount/introImages.length)*100;
@@ -484,10 +486,13 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 
 function showPlayButton(){
-	var playButtonContainer = document.getElementById("playButtonContainer");
-	var loadingContainer = document.getElementById("loadingContainer");
+	//delay 2 seconds, make it more consistently play right on time
+	setTimeout(function(){
+		var playButtonContainer = document.getElementById("playButtonContainer");
+		var loadingContainer = document.getElementById("loadingContainer");
 
-	playButtonContainer.style.display = "block";
-	loadingContainer.style.display = "none";
+		playButtonContainer.style.display = "block";
+		loadingContainer.style.display = "none";
+	}, 2000);
 }
 

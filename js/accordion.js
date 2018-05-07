@@ -1,3 +1,7 @@
+/*************** 
+Created by Samantha Petrie: UNC Chapel Hill, Project Forever-home
+***************/
+
 var acc = document.getElementsByClassName("accordion");
 var panel = document.getElementsByClassName('panel');
 

@@ -1,25 +1,6 @@
-//ending scene logic goes in here
-
-//populate button texts with a self executing function
-/*(function populateButtonTexts(){
-
-	var tmpNode = tree.root;
-
-	for(i = 0; i < 5; i++){
-		tmpNode = tmpNode.children[0];
-		for(var option = 1; option < 5; option++){
-			var buttonText = document.getElementById('scene' + (i+1) + 'Option' + option);
-			buttonText.innerHTML = tmpNode.metadata.buttonTexts[option-1].buttonText;
-			console.debug(tmpNode);
-		}
-	}
-
-})();*/
-
-$( document ).ready(function() {
-	document.getElementById('tab-active').classList.toggle("active");
-    	document.getElementById('tab-active').nextElementSibling.classList.toggle("show");
-});
+/*************** 
+Created by Samantha Petrie, Danila Chenchik: UNC Chapel Hill, Project Forever-home
+***************/
 
 function assignOptionNames(scene, option){
 	var offset = option - 1;

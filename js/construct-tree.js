@@ -1,3 +1,7 @@
+/*************** 
+Created by Danila Chenchik: UNC Chapel Hill, Project Forever-home
+***************/
+
 //creating root, first scene
 var tree = new Tree("intro", {
 	id: 0,
