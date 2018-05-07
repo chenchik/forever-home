@@ -53,7 +53,7 @@ img#endingImageSource {
 }
 
 .panel {
-    padding: 0 18px;
+    padding: 0 12px;
     width: 100%;
     display: none;
     background-color: white;
@@ -103,7 +103,7 @@ div#endingSceneMetricsContainer {
     text-align: left;
     /* display: none; */
     font-size: 15px;
-    background: rgb(255,255,255);
+    background: rgba(255,255,255, 0.9);
     /* padding: 20px; */
     /* padding-left: 10px; */
     /* padding-right: 10px; */
