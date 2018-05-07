@@ -56,8 +56,6 @@ function preloadImages(array) {
         img.onload = function() {
             var index = list.indexOf(this);
             if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
                 list.splice(index, 1);
                 imageCount++;
             }
@@ -67,49 +65,18 @@ function preloadImages(array) {
     }
 }
 
-var allImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
-				"../images/intro/OpeningScene1And2-merged-no-loop.gif",
-				//"../images/intro/OpeningScenePart1-no-loop-try-1.gif",
-				//"../images/intro/OpeningScenePart2-no-loop-try-1.gif",
-				"../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif",
-				"../images/intro/Part3AfterBudgetPick-no-loop.gif",
-				"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
-				"../images/scene1/LivingRoom-Option1(Levelled).png",
-				"../images/scene1/LivingRoom-CloudTransition.gif",
-				"../images/scene1/KitchenTransition-no-loop.gif",
-				"../images/scene1/LivingRoom-Option3(Lift).png",
-				"../images/scene1/LivingRoom-Option2(Ramp).png",
-				"../images/scene1/LivingRoom-Option4(NoCost)-no-loop.gif",
-				"../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
-				"../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-				"../images/scene2/Kitchen1-TransitiontoKitchen2-new-no-loop.gif",
-				"../images/scene2/Kitchen1-Option1_light_lowered.png",
-				"../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
-				"../images/scene2/Kitchen1-Option3_Alexa.png",
-				"../images/scene2/Kitchen1-NoCost_string.png",
-				"../images/scene3/KitchenScene2 - OpeningScene-merged-new-new-no-loop.gif",
-				"../images/scene3/KitchenScene2-Cloud Transition.gif",
-				"../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
-				"../images/scene3/KitchenScene2 -  Option1(Change Table).jpg",
-				"../images/scene3/KitchenScene2 - Option2(Grabber).jpg",
-				"../images/scene3/KitchenScene2 - Option3(Bar)-new-new-no-loop.gif",
-				"../images/scene3/KitchenScene2 - Option4(No Cost).jpg",
-				"../images/scene4/Stairs-OpeningScene-new-no-loop.gif",
-				"../images/scene4/Stairs-CloudTransition.gif",
-				"../images/scene4/Stairs-CircleTransition-no-loop-new.gif",
-				"../images/scene4/Stairs-Elevator.jpg",
-				"../images/scene4/Stairs-Heaters.jpg",
-				"../images/scene4/Stairs-Nest.jpg",
-				"../images/scene4/Stairs-Blanket.jpg",
-				"../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
-				"../images/scene5/FrontDoor-CloudTransition.gif",
-				"../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
-				"../images/scene5/FrontDoor-SlideDoor.png",
-				"../images/scene5/FrontDoor-DoorOperator.png",
-				"../images/scene5/FrontDoor-Hook.png",
-				"../images/scene5/FrontDoor-Hannah.png",
-				"../images/scene2/KitchenTransition-no-loop.gif"];
-preloadImages(allImages);
+var introImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
+					"../images/intro/OpeningScene1And2-merged-no-loop.gif",
+					"../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif",
+					"../images/intro/Part3AfterBudgetPick-no-loop.gif",
+					"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
+					"../images/scene1/LivingRoom-Option1(Levelled).png",
+					"../images/scene1/LivingRoom-CloudTransition.gif",
+					"../images/scene1/KitchenTransition-no-loop.gif",
+					"../images/scene1/LivingRoom-Option3(Lift).png",
+					"../images/scene1/LivingRoom-Option2(Ramp).png",
+					"../images/scene1/LivingRoom-Option4(NoCost)-no-loop.gif"];
+preloadImages(introImages);
 
 var sceneImages = [["../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 					"../images/scene1/LivingRoom-CloudTransition.gif",
@@ -169,16 +136,6 @@ function playGame(){
 	var mainImage = document.getElementById("imageSource");
 	mainImage.src = "../images/intro/OpeningScene1And2-merged-no-loop.gif";
 
-	//gif are max 28 seconds max on the program we use (moovly), so we need to play one right after the first one
-	//setTimeout(function(){
-	//	mainImage.src = "../images/intro/OpeningScenePart2-no-loop-try-1.gif";
-
-		//then pop up the budget selection 7 seconds later
-	//	setTimeout(function(){
-	//		var budgetSelector = document.getElementById("budgetSelectionContainer");
-	//		budgetSelector.style.display = "list-item";
-	//	}, 7000);
-	//}, 25000);
 	setTimeout(function(){
 		var budgetSelector = document.getElementById("budgetSelectionContainer");
 		budgetSelector.style.display = "list-item";
@@ -453,36 +410,12 @@ function refreshFunctionality(){
 	var displayFunctionalityElement = document.getElementById('functionalityNumber');
 	var fullFuncString = " " + functionality + "/" + potentialFunctionality;
 
-	//old logic
-	//append as many icons as you need for functionality
-	//make it look different dpeneding on the amount 
-	/*if(functionality > 4){
-		fullFuncString += '<span class="glyphicon glyphicon-cog"></span> ';
-		fullFuncString += '* ' + functionality;
-	}else{
-		for(var i = 0; i < functionality; i++){
-			fullFuncString += '<span class="glyphicon glyphicon-cog"></span> ';
-		}	
-	}*/
-
 	displayFunctionalityElement.innerHTML = fullFuncString;
 }
 
 function refreshAesthetic(){
 	var displayAestheticElement = document.getElementById('aestheticNumber');
 	var fullAesString = " " + aesthetic + "/" + potentialAesthetic;
-	
-	//old logic
-	//append as many icons as you need for aesthetics
-	//make it look different depending on the amount
-	/*if(aesthetic > 4){
-		fullAesString += '<span class="glyphicon glyphicon-star"></span> ';
-		fullAesString += '* ' + aesthetic;
-	}else{
-		for(var i = 0; i < aesthetic; i++){
-			fullAesString += '<span class="glyphicon glyphicon-star"></span> ';
-		}	
-	}*/
 
 	displayAestheticElement.innerHTML = fullAesString;
 }
@@ -521,14 +454,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var id = setInterval(frame, 100);
     var numDots = 1;
     function frame() {
-        if (imageCount >= allImages.length) {
-            clearInterval(id);
-            showPlayButton();
+        if (imageCount >= introImages.length) {
+        	//stall for a bit just in case, seems to help
+        	setTimeout(function(){
+        		clearInterval(id);
+            	showPlayButton();	
+        	}, 2000);       
         } else {
         	//logic to handle loading bar animation
-            var toPercent = (imageCount/allImages.length)*100;
+            var toPercent = (imageCount/introImages.length)*100;
             elem.style.width = toPercent + '%';
-            console.log("loaded image" + imageCount + "out of " + allImages.length);
+            console.log("loaded image" + imageCount + "out of " + introImages.length);
 
             //logic to handle "dot dot dot" animation on loading text
             if(frameCount%300 == 0){

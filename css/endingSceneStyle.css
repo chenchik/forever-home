@@ -27,7 +27,7 @@ img#endingImageSource {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
     border: none;
     text-align: left;
@@ -123,7 +123,7 @@ span#endingSceneFunctionalityIcon {
     color: #19B5FE;
 }
 span#endingSceneAestheticIcon {
-    color: #DBFE87;
+    color: #59db29;
 }
 .bold {
     font-weight: 700;

@@ -103,7 +103,7 @@ tree.add('scene3', {
 	scene: "../images/scene3/KitchenScene2 - OpeningScene-merged-new-new-no-loop.gif",
 	cloudTransition: "../images/scene3/KitchenScene2-Cloud Transition.gif",
 	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
-	introSceneTime: 44000,
+	introSceneTime: 43000,
 	buttonTexts: [{
 			buttonText: "New table",
 			optionImageSource: "../images/scene3/KitchenScene2 -  Option1(Change Table).jpg",
@@ -145,7 +145,7 @@ tree.add('scene4', {
 	scene: "../images/scene4/Stairs-OpeningScene-new-no-loop.gif",
 	cloudTransition: "../images/scene4/Stairs-CloudTransition.gif",
 	sceneTransition: "../images/scene4/Stairs-CircleTransition-no-loop-new.gif",
-	introSceneTime: 33000,
+	introSceneTime: 32000,
 	buttonTexts: [{
 			buttonText: "Install Elevator",
 			optionImageSource: "../images/scene4/Stairs-Elevator.jpg",
