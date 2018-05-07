@@ -60,7 +60,7 @@ tree.add('scene2', {
 	id: 2,
 	scene: "../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
 	cloudTransition: "../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
-	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-new-no-loop.gif",
+	sceneTransition: "../images/scene2/KitchenTransition-no-loop.gif",
 	introSceneTime: 35000,
 	buttonTexts: [{
 			buttonText: "Move Light Switch",
@@ -100,13 +100,13 @@ tree.add('scene2', {
 
 tree.add('scene3', {
 	id: 3,
-	scene: "../images/scene3/KitchenScene2 - OpeningScene-merged-no-loop.gif",
+	scene: "../images/scene3/KitchenScene2 - OpeningScene-merged-new-new-no-loop.gif",
 	cloudTransition: "../images/scene3/KitchenScene2-Cloud Transition.gif",
 	sceneTransition: "../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
-	introSceneTime: 50000,
+	introSceneTime: 44000,
 	buttonTexts: [{
 			buttonText: "New table",
-			optionImageSource: "../images/scene3/KitchenScene2 -  Option1(Change Table).png",
+			optionImageSource: "../images/scene3/KitchenScene2 -  Option1(Change Table).jpg",
 			cost: 500,
 			functionality: 5,
 			aesthetic: 4,
@@ -114,7 +114,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Grabber Tool",
-			optionImageSource: "../images/scene3/KitchenScene2 - Option2(Grabber).png",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option2(Grabber).jpg",
 			cost: 30,
 			functionality: 2,
 			aesthetic: 5,
@@ -122,7 +122,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Install Grab Bar",
-			optionImageSource: "../images/scene3/KitchenScene2 - Option3(Bar)-no-loop.gif",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option3(Bar)-new-new-no-loop.gif",
 			cost: 120,
 			functionality: 3,
 			aesthetic: 3,
@@ -130,7 +130,7 @@ tree.add('scene3', {
 		},
 		{
 			buttonText: "Give Away Sandwich",
-			optionImageSource: "../images/scene3/KitchenScene2 - Option4(No Cost).png",
+			optionImageSource: "../images/scene3/KitchenScene2 - Option4(No Cost).jpg",
 			cost: 0,
 			functionality: 0,
 			aesthetic: 5,
@@ -142,13 +142,13 @@ tree.add('scene3', {
 
 tree.add('scene4', {
 	id: 4,
-	scene: "../images/scene4/Stairs-OpeningScene-no-loop.gif",
+	scene: "../images/scene4/Stairs-OpeningScene-new-no-loop.gif",
 	cloudTransition: "../images/scene4/Stairs-CloudTransition.gif",
-	sceneTransition: "../images/scene4/Stairs-CircleTransition-no-loop.gif",
-	introSceneTime: 35000,
+	sceneTransition: "../images/scene4/Stairs-CircleTransition-no-loop-new.gif",
+	introSceneTime: 33000,
 	buttonTexts: [{
 			buttonText: "Install Elevator",
-			optionImageSource: "../images/scene4/Stairs-Elevator.png",
+			optionImageSource: "../images/scene4/Stairs-Elevator.jpg",
 			cost: 25000,
 			functionality: 5,
 			aesthetic: 4,
@@ -156,7 +156,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Purchase Space Heaters",
-			optionImageSource: "../images/scene4/Stairs-Heaters.png",
+			optionImageSource: "../images/scene4/Stairs-Heaters.jpg",
 			cost: 200,
 			functionality: 3,
 			aesthetic: 3,
@@ -164,7 +164,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Install Smart Thermostat",
-			optionImageSource: "../images/scene4/Stairs-Nest.png",
+			optionImageSource: "../images/scene4/Stairs-Nest.jpg",
 			cost: 250,
 			functionality: 4,
 			aesthetic: 5,
@@ -172,7 +172,7 @@ tree.add('scene4', {
 		},
 		{
 			buttonText: "Pull Out Blanket",
-			optionImageSource: "../images/scene4/Stairs-Blanket.png",
+			optionImageSource: "../images/scene4/Stairs-Blanket.jpg",
 			cost: 0,
 			functionality: 1,
 			aesthetic: 5,

@@ -1,20 +1,6 @@
-/* 
-state protocol
-0 = transiton state
-1 = start state / first scenario
-2 = second scenario
-3 = third scenario
-4 = fourth scenario
-5 = fifth scenario
-*/
-
-/*
-transition protocol
-0 = switching scenes
-1 = builing something 
-*/
-var currentState = 1;
-var currentTransition = 1;
+/*************** 
+Created by Danila Chenchik: UNC Chapel Hill, Project Forever-home
+***************/
 
 var currentNode = tree.root.children[0];
 
@@ -82,15 +68,15 @@ function preloadImages(array) {
 }
 
 var allImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
-				"../images/intro/OpeningScenePart1-no-loop-try-1.gif",
-				"../images/intro/OpeningScenePart2-no-loop-try-1.gif",
+				"../images/intro/OpeningScene1And2-merged-no-loop.gif",
+				//"../images/intro/OpeningScenePart1-no-loop-try-1.gif",
+				//"../images/intro/OpeningScenePart2-no-loop-try-1.gif",
 				"../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif",
+				"../images/intro/Part3AfterBudgetPick-no-loop.gif",
 				"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 				"../images/scene1/LivingRoom-Option1(Levelled).png",
-				"../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
 				"../images/scene1/LivingRoom-CloudTransition.gif",
 				"../images/scene1/KitchenTransition-no-loop.gif",
-				"../images/scene1/LivingRoom-Option1(Levelled).png",
 				"../images/scene1/LivingRoom-Option3(Lift).png",
 				"../images/scene1/LivingRoom-Option2(Ramp).png",
 				"../images/scene1/LivingRoom-Option4(NoCost)-no-loop.gif",
@@ -101,28 +87,74 @@ var allImages = [ "../images/scene1/LivingRoom-OpeningScene.gif",
 				"../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
 				"../images/scene2/Kitchen1-Option3_Alexa.png",
 				"../images/scene2/Kitchen1-NoCost_string.png",
-				"../images/scene3/KitchenScene2 - OpeningScene-merged-no-loop.gif",
+				"../images/scene3/KitchenScene2 - OpeningScene-merged-new-new-no-loop.gif",
 				"../images/scene3/KitchenScene2-Cloud Transition.gif",
 				"../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
-				"../images/scene3/KitchenScene2 -  Option1(Change Table).png",
-				"../images/scene3/KitchenScene2 - Option2(Grabber).png",
-				"../images/scene3/KitchenScene2 - Option3(Bar)-no-loop.gif",
-				"../images/scene3/KitchenScene2 - Option4(No Cost).png",
-				"../images/scene4/Stairs-OpeningScene-no-loop.gif",
+				"../images/scene3/KitchenScene2 -  Option1(Change Table).jpg",
+				"../images/scene3/KitchenScene2 - Option2(Grabber).jpg",
+				"../images/scene3/KitchenScene2 - Option3(Bar)-new-new-no-loop.gif",
+				"../images/scene3/KitchenScene2 - Option4(No Cost).jpg",
+				"../images/scene4/Stairs-OpeningScene-new-no-loop.gif",
 				"../images/scene4/Stairs-CloudTransition.gif",
-				"../images/scene4/Stairs-CircleTransition-no-loop.gif",
-				"../images/scene4/Stairs-Elevator.png",
-				"../images/scene4/Stairs-Heaters.png",
-				"../images/scene4/Stairs-Nest.png",
-				"../images/scene4/Stairs-Blanket.png",
+				"../images/scene4/Stairs-CircleTransition-no-loop-new.gif",
+				"../images/scene4/Stairs-Elevator.jpg",
+				"../images/scene4/Stairs-Heaters.jpg",
+				"../images/scene4/Stairs-Nest.jpg",
+				"../images/scene4/Stairs-Blanket.jpg",
 				"../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
 				"../images/scene5/FrontDoor-CloudTransition.gif",
 				"../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
 				"../images/scene5/FrontDoor-SlideDoor.png",
 				"../images/scene5/FrontDoor-DoorOperator.png",
 				"../images/scene5/FrontDoor-Hook.png",
-				"../images/scene5/FrontDoor-Hannah.png"];
+				"../images/scene5/FrontDoor-Hannah.png",
+				"../images/scene2/KitchenTransition-no-loop.gif"];
 preloadImages(allImages);
+
+var sceneImages = [["../images/scene1/LivingRoom-OpeningScene-no-loop.gif",
+					"../images/scene1/LivingRoom-CloudTransition.gif",
+					"../images/scene1/KitchenTransition-no-loop.gif",
+					"../images/scene1/LivingRoom-Option1(Levelled).png",
+					"../images/scene1/LivingRoom-Option3(Lift).png",
+					"../images/scene1/LivingRoom-Option2(Ramp).png",
+					"../images/scene1/LivingRoom-Option4(NoCost)-no-loop.gif"
+					],
+					[
+					"../images/scene2/Kitchen1-OpeningSceneMerged-no-loop-try-1.gif",
+					"../images/scene2/Kitchen1-CloudTransition-no-loop-try-1.gif",
+					"../images/scene2/KitchenTransition-no-loop.gif",
+					"../images/scene2/Kitchen1-Option1_light_lowered.png",
+					"../images/scene2/Kitchen1-Option2_Phillips_Hue.png",
+					"../images/scene2/Kitchen1-Option3_Alexa.png",
+					"../images/scene2/Kitchen1-NoCost_string.png"
+					],
+					[
+					"../images/scene3/KitchenScene2 - OpeningScene-merged-new-new-no-loop.gif",
+					"../images/scene3/KitchenScene2-Cloud Transition.gif",
+					"../images/scene2/Kitchen1-TransitiontoKitchen2-no-loop-try-1.gif",
+					"../images/scene3/KitchenScene2 -  Option1(Change Table).jpg",
+					"../images/scene3/KitchenScene2 - Option2(Grabber).jpg",
+					"../images/scene3/KitchenScene2 - Option3(Bar)-new-new-no-loop.gif",
+					"../images/scene3/KitchenScene2 - Option4(No Cost).jpg"
+					],
+					[
+					"../images/scene4/Stairs-OpeningScene-new-no-loop.gif",
+					"../images/scene4/Stairs-CloudTransition.gif",
+					"../images/scene4/Stairs-CircleTransition-no-loop-new.gif",
+					"../images/scene4/Stairs-Elevator.jpg",
+					"../images/scene4/Stairs-Heaters.jpg",
+					"../images/scene4/Stairs-Nest.jpg",
+					"../images/scene4/Stairs-Blanket.jpg"
+					],
+					[
+					"../images/scene5/FrontDoor-OpeningScene-no-loop.gif",
+					"../images/scene5/FrontDoor-CloudTransition.gif",
+					"../images/scene5/FrontDoor-CircleTransition-no-loop.gif",
+					"../images/scene5/FrontDoor-SlideDoor.png",
+					"../images/scene5/FrontDoor-DoorOperator.png",
+					"../images/scene5/FrontDoor-Hook.png",
+					"../images/scene5/FrontDoor-Hannah.png"
+					]];
 
 function playGame(){
 	//play the music at the 8 second start point
@@ -135,39 +167,47 @@ function playGame(){
 
 	//set the intial first intro scene gif
 	var mainImage = document.getElementById("imageSource");
-	mainImage.src = "../images/intro/OpeningScenePart1-no-loop-try-1.gif";
+	mainImage.src = "../images/intro/OpeningScene1And2-merged-no-loop.gif";
 
 	//gif are max 28 seconds max on the program we use (moovly), so we need to play one right after the first one
-	setTimeout(function(){
-		mainImage.src = "../images/intro/OpeningScenePart2-no-loop-try-1.gif";
+	//setTimeout(function(){
+	//	mainImage.src = "../images/intro/OpeningScenePart2-no-loop-try-1.gif";
 
 		//then pop up the budget selection 7 seconds later
-		setTimeout(function(){
-			var budgetSelector = document.getElementById("budgetSelectionContainer");
-			budgetSelector.style.display = "list-item";
-		}, 7000);
-	}, 30000);
-
+	//	setTimeout(function(){
+	//		var budgetSelector = document.getElementById("budgetSelectionContainer");
+	//		budgetSelector.style.display = "list-item";
+	//	}, 7000);
+	//}, 25000);
+	setTimeout(function(){
+		var budgetSelector = document.getElementById("budgetSelectionContainer");
+		budgetSelector.style.display = "list-item";
+	}, 37000);
 }
 
 function applyBudget(){
 	//remove the budgetFieldContainer
 	var budgetSelectionContainer = document.getElementById("budgetSelectionContainer");
-	budgetSelectionContainer.style.display = "none";
+	//budgetSelectionContainer.style.display = "none";
 
 	var budgetField = document.getElementById("budgetNumberField");
 
 	//apply this number to the budget, which is a global variable
 	budget = budgetField.value;
+
+	//remove the budget seclection thing after a 1/5th of a second
+	setTimeout(function(){
+		budgetSelectionContainer.style.display = "none";
+	}, 200);
 	
 	//set main image to the last intro scene
 	var mainImage = document.getElementById("imageSource");
-	mainImage.src = "../images/intro/Part3AfterBudgetPick-no-loop-try-1.gif";
+	mainImage.src = "../images/intro/Part3AfterBudgetPick-no-loop.gif";
 	setTimeout(function(){
 		transition('buildingSourceContainer','buildingSource');
 		mainImage.src = "../images/scene1/LivingRoom-OpeningScene-no-loop.gif";
 		initialize();
-	}, 10000); 
+	}, 8500); 
 
 }
 
@@ -190,18 +230,12 @@ function initialize(){
 		//on mouseout, we hide the option again
 		//addButtonListeners(); 
 		//create a time attribute for each node
-	}, 28000);
+	}, 26000);
+	//change scene 1 timing before buttons pop up here
 }
 
-//need to clear cache whenever we make a new run of the game
-/*function clearThatCache()
-{
-  location.reload(true);
-}
-window.onbeforeunload = clearThatCache;*/
-
-
-
+//used for further cache optimization
+var nextSceneSelector = 1;
 function selectOption(option){
 
 	if(option > 3){
@@ -230,6 +264,11 @@ function selectOption(option){
 	//save the selection
 	pastSelection = option+1;
 
+	//get the next next set of images for improved cache optimization
+	if(nextSceneSelector < sceneImages.length){
+		preloadImages(sceneImages[nextSceneSelector]);
+		nextSceneSelector++;	
+	}
 }
 
 function transition(transition, imageId){
@@ -248,7 +287,7 @@ function transition(transition, imageId){
 	
 	setTimeout(function(){
 		container.style.display = "none";
-	}, 2000);	
+	}, 1500);	
 }
 
 function placeItem(option){
@@ -342,7 +381,7 @@ function nextScene(){
 	}
 
 	//pull up the transition animation for switching scenes
-	transition('switchingSourceContainer','switchingSource');
+	//transition('switchingSourceContainer','switchingSource');
 
 	//change the scene image
 	var sceneImage = document.getElementById('imageSource');
@@ -474,37 +513,38 @@ function onMouseOutButtonListener(option){
 
 //execute loading bar functionality when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    //alert("Ready!");
+	var mainImage = document.getElementById("imageSource");
+	mainImage.src = "../images/House.png";
     var elem = document.getElementById("myBar"); 
     var width = 1;
-    var id = setInterval(frame, 10);
+    var frameCount = 0;
+    var id = setInterval(frame, 100);
+    var numDots = 1;
     function frame() {
         if (imageCount >= allImages.length) {
             clearInterval(id);
             showPlayButton();
         } else {
-            //width++; 
-            //elem.style.width = width + '%';
+        	//logic to handle loading bar animation
             var toPercent = (imageCount/allImages.length)*100;
-            elem.style.width = toPercent + '%'; 
+            elem.style.width = toPercent + '%';
+            console.log("loaded image" + imageCount + "out of " + allImages.length);
+
+            //logic to handle "dot dot dot" animation on loading text
+            if(frameCount%300 == 0){
+
+	            var loadingText = document.getElementById("loadingText");
+				var textToAdd = "loading";
+				for(var i = 0; i < numDots; i++){
+					textToAdd = ". " + textToAdd + " ." ; 
+				}
+				loadingText.innerHTML = textToAdd;
+				numDots+=1;
+				numDots = numDots % 4;
+			}
+			frameCount += 100;
         }
     }
-
-    //loading animation
-    var numDots = 0;
-   	/*
-    while(true){
-    	setTimeout(function(){
-			var loadingText = document.getElementById("loadingText");
-			loadingText.innerHTML = "loading";
-			for(var i = 0; i < numDots; i++){
-				loadingText += " ."; 
-			}
-		}, 500);
-		if(imageCount >= allImages.length){
-			break;
-		}
-    }*/
 }, false);
 
 function showPlayButton(){
